@@ -1,4 +1,23 @@
 // server.js
+const cors = require("cors");
+const allowedOrigins = [
+  "http://localhost:3000",             // local React dev
+  "https://mahadevan10.github.io"      // your deployed frontend
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like curl or Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"), false);
+    }
+  },
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 try {
   if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
