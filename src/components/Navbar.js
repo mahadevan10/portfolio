@@ -12,7 +12,7 @@ const XIcon = ({ className = "w-7 h-7" }) => (
   </svg>
 );
 
-export default function Navbar({ resumeHref = "/resume.pdf" }) {
+export default function Navbar({ resumeHref = process.env.PUBLIC_URL + "/resume.pdf", dp="" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,7 +21,11 @@ export default function Navbar({ resumeHref = "/resume.pdf" }) {
         {/* Logo */}
         <a href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cambridge_blue-500 to-hookers_green-500 flex items-center justify-center text-white font-semibold">
-            MB
+             <img
+                    src={dp}
+                    alt="Profile"
+                    className="w-10 h-10 rounded-full"
+                />
           </div>
           <span className="text-lg font-bold text-dark_slate_gray-500">Mahadevan</span>
         </a>

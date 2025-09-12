@@ -3,13 +3,10 @@ import React from "react";
 /**
  * Hero component
  * - Shows: "hey, you have reached Mahadevan's Portfolio website"
- * - Uses your custom Tailwind palette (assumes you've added colors in tailwind.config.js)
+ * - Uses your custom Tailwind palette (tailwind.config.js)
  * - Accepts `bgImage` prop (string path or URL). If not provided, shows a gradient fallback.
- *
- * Usage:
- * <Hero bgImage="/images/portfolio-bg.jpg" />
  */
-export default function Hero({ bgImage = "" }) {
+export default function Hero({ bgImage = "", dp = "" }) {
   // inline style for background image + overlay
   const bgStyle = bgImage
     ? {
@@ -38,12 +35,12 @@ export default function Hero({ bgImage = "" }) {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Left: Text */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-ash_gray-100">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-hookers_green">
                 hey, you have reached{" "}
                 <span className="block text-cambridge_blue-500">Mahadevan's Portfolio website</span>
               </h1>
 
-              <p className="mt-6 text-md text-charcoal-300 max-w-2xl">
+              <p className="mt-6 text-md text-hookers_green-900 max-w-2xl">
                 I build ML & AI tools and create elegant web experiences. Browse projects,
                 explore my skills, or download my resume from the navbar.
               </p>
@@ -68,10 +65,17 @@ export default function Hero({ bgImage = "" }) {
             </div>
 
             {/* Right: circular badge MB */}
-            <div className="w-40 h-40 rounded-full flex items-center justify-center shrink-0
-                            bg-gradient-to-br from-cambridge_blue-500 to-hookers_green-500 shadow-xl">
-              <span className="text-3xl font-bold text-white">MB</span>
+            <div
+                className="w-40 h-40 rounded-full flex items-center justify-center shrink-0
+                        bg-gradient-to-br from-cambridge_blue-500 to-hookers_green-500 shadow-xl overflow-hidden"
+            >
+                <img
+                    src={dp}
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                />
             </div>
+
           </div>
         </div>
 
