@@ -1,6 +1,10 @@
 // server.js
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+try {
+  if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+} catch (e) {
+  
 }
 
 const express = require("express");
