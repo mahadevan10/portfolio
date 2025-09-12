@@ -39,7 +39,7 @@ export default function SkillsHybrid() {
                 background: "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02))",
                 border: "1px solid rgba(0,0,0,0.06)"
               }}>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--forest)" }}>{cat.title}</h3>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--wine)" }}>{cat.title}</h3>
                 <p className="text-sm text-dark/70 mb-3">{cat.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map(s => (

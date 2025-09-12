@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --ash: #cad2c5;       /* ash_gray */
-  --dark: #1f2937;      /* dark slate */
-  --sage: #a0af97;      /* sage green */
-  --forest: #4f5c47;    /* forest green */
-  --earth: #f0c05a;     /* earth yellow */
+:root {
+  --ash: #cad2c5;       /* ash gray (neutral base) */
+  --dark: #1f2937;      /* dark slate (text/headings) */
+  --sage: #a0af97;      /* sage green (muted accent) */
+  --forest: #4f5c47;    /* forest green (deep background) */
+  --earth: #f0c05a;     /* earth yellow (highlight/accent) */
+  --sky: #87bba2;       /* muted teal, pairs well with green */
+  --stone: #e5e9ec;     /* light stone gray, good for backgrounds */
+  --clay: #d4a373;      /* warm clay brown, natural accent */
+  --sunset: #ffb347;    /* soft orange, warm highlight */
+  --wine: #6b2737;      /* muted burgundy, bold contrast */
+  --ocean: #1b4965;     /* deep blue, secondary accent */
 }
+

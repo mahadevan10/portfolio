@@ -22,13 +22,13 @@ const timeline = [
     title: "Equity Trading & Quant Experimentation",
     subtitle: "Independent / Freelance",
     description:
-      "Experience in equity trading, backtesting simple strategies and building data-driven decision tools using Python and SQL.",
+      "Experience in equity trading, backtesting simple strategies and building data-driven decision tools using Python and ML.",
   },
   {
     title: "Skills & Tooling",
-    subtitle: "Python • SQL • Excel • ML • LLMs",
+    subtitle: "Python • Javascript • Excel • ML • LLMs",
     description:
-      "Working knowledge of Python, SQL, Excel; comfortable with ML workflows, data cleaning, model training and deployment.",
+      "Working knowledge of Python, Javascript, Excel; comfortable with ML workflows, data cleaning, model training and deployment.",
   },
   {
     title: "Building Products",
