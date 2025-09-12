@@ -3,14 +3,14 @@
 import React, { useEffect } from "react";
 
 const categories = [
-  { title: "Programming", desc: "Clean, readable code & automation.", items: ["Python", "JavaScript", "React"] },
-  { title: "ML & Data", desc: "Models, pipelines, and visualizations.", items: ["LSTM", "TensorFlow", "Pandas"] },
-  { title: "Tools & Infra", desc: "Deployment and productivity.", items: ["MS Excel", "Git"] },
+  { title: "Programming", desc: "Clean, readable code & automation.", items: ["Python", "MERN stack"] },
+  { title: "ML & Data", desc: "Models, pipelines, and visualizations.", items: ["LSTM", "TensorFlow", "Pandas", "Numpy", "matplotlib"] },
+  { title: "Tools & Infra", desc: "Deployment and productivity.", items: ["MS Excel", "Git", "Render", "Huggingface"] },
 ];
 
 const allChips = [
   "React","Node.js","OpenCV","Scikit-learn","TensorFlow","Excel","Web Scraping",
-  "Equity Trading","Tailwind v3","RAG Systems","HTML","CSS"
+  "Time-series data","Tailwind CSS","RAG Systems","HTML","CSS"
 ];
 
 
@@ -26,7 +26,7 @@ export default function SkillsHybrid() {
       <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-3">
         {/* LEFT: categories */}
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "var(--forest)" }}>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: "var(--dark)" }}>
             Skills
           </h2>
           <p className="text-base max-w-xl">

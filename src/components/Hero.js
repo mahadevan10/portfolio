@@ -18,7 +18,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
 
   return (
     <header
-      className="w-full min-h-screen flex items-center"
+      className="w-full min-h-screen flex items-center bg-fixed"
       // fallback gradient when bgImage not provided uses your palette
       style={
         Object.keys(bgStyle).length
@@ -35,7 +35,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Left: Text */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-hookers_green">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-stone-200">
                 hey, you have reached{" "}
                 <span className="block text-cambridge_blue-500">Mahadevan's Portfolio website</span>
               </h1>
@@ -81,7 +81,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
 
         {/* subtle credit / hint */}
         <div className="mt-6 text-center text-xs text-ash_gray-800/80">
-            Built with React & Tailwind CSS. 
+            Built with React & Tailwind CSS. Backend: Node.js + Express + Nodemailer.
         </div>
       </div>
     </header>

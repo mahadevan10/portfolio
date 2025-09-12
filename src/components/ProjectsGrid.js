@@ -26,7 +26,9 @@ export default function ProjectsGrid({ projects = [] }) {
       <div id="projects" className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl sm:text-3xl font-semibold">Projects</h2>
-          <p className="text-sm text-gray-600">A selection of my work — click the GitHub button to view source.</p>
+          <p className="text-xs sm:text-sm text-gray-600 text-center sm:text-left px-2 sm:px-0">
+            A selection of my work — click the GitHub button to view source.
+          </p>
         </div>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -36,13 +38,27 @@ export default function ProjectsGrid({ projects = [] }) {
               className="relative rounded-2xl shadow-md overflow-hidden border" 
               style={{ backgroundColor: 'var(--card)', borderColor: 'rgba(0,0,0,0.04)' }}
             >
+              {/* Under Work Pill */}
+              {p.underWork && (
+                <span
+                  className="absolute top-3 right-3 z-10 px-3 py-1 text-xs font-bold rounded-full"
+                  style={{
+                    background: 'linear-gradient(90deg, #fbbf24 60%, #f59e42 100%)',
+                    color: '#fff',
+                    boxShadow: '0 2px 8px rgba(251,191,36,0.15)',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  Under Work
+                </span>
+              )}
               <div className="h-44 sm:h-52 w-full bg-gray-100">
                 {/* image */}
                 {p.image ? (
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="object-cover w-full h-full"
+                    className="object-cover object-[center_65%] w-full h-full"
                     loading="lazy"
                   />
                 ) : (

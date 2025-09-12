@@ -7,10 +7,11 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 
 
+
 const projects = [
   {
     id: 'proj-1',
-    image: process.env.PUBLIC_URL + '/images/portfolio-bg.jpg',
+    image: process.env.PUBLIC_URL + '/images/signLanguage.png',
     title: 'Sign Language Recognizer',
     description: 'LSTM-based model that translates sign gestures to text',
     skills: ['Python', 'LSTM', 'OpenCV'],
@@ -19,7 +20,7 @@ const projects = [
   },
   {
     id: 'proj-2',
-    image: process.env.PUBLIC_URL + '/images/portfolio-bg.jpg',
+    image: process.env.PUBLIC_URL + '/images/prediction_plot.png',
     title: 'Reliance Stock Price Predictor',
     description: 'Regression and LSTM models to predict next-day stock price of Reliance',
     skills: ['Python', 'Pandas', 'LSTM', 'Scikit-learn'],
@@ -28,12 +29,13 @@ const projects = [
   },
   {
     id: 'proj-3',
-    image: process.env.PUBLIC_URL + '/images/portfolio-bg.jpg',
-    title: 'Kerala Law Scraper',
-    description: 'Scraper for extracting and structuring Kerala-specific acts from India Code',
+    image: process.env.PUBLIC_URL + '/images/RAG.png',
+    title: 'Kerala Laws Scraper + RAG chatbot',
+    description: 'Scraper for extracting and structuring Kerala-specific acts from India Code and then using and RAG to answer questions on them',
     skills: ['Python', 'Playwright', 'SQLite', 'PDFPlumber'],
     github: 'https://github.com/mahadevan10/kerala-law-scraper',
-    year: 2025
+    year: 2025,
+    underWork: true
   },
   {
     id: 'proj-4',
@@ -67,7 +69,7 @@ function App() {
     <AboutSection />
     <ProjectsGrid projects={projects} />
     <Skills />
-    <Contact />
+    <Contact bgImage={process.env.PUBLIC_URL + '/images/green-bg.jpg'}/>
     </>
   );
 }

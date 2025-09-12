@@ -3,8 +3,7 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
-
-export default function Contact() {
+export default function Contact({bgImage = ""}) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
@@ -33,9 +32,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-ash_gray-100 p-6">
-      <div className="w-full max-w-2xl bg-ash_gray-200 rounded-2xl shadow-lg p-8">
-        
+    <section
+      id="contact"
+      className="relative min-h-screen flex items-center justify-center p-6 bg-fixed"
+      style={
+        bgImage
+          ? {
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }
+          : { backgroundColor: "#f3f4f6" }
+      }
+    >
+      {/* Blurred overlay */}
+      {bgImage && (
+        <div className="absolute inset-0 z-0 backdrop-blur-sm bg-black/10 pointer-events-none" />
+      )}
+      <div className="relative z-10 w-full max-w-2xl bg-ash_gray-200 rounded-2xl shadow-lg p-8 bg-opacity-90">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center text-ash_gray-500 mb-2">
           Get in Touch
@@ -105,6 +120,10 @@ export default function Contact() {
             Send Message
           </button>
           {status && <p className="text-center mt-2">{status}</p>}
+          {/* subtle credit / hint */}
+            <div className="mt-6 text-center text-xs text-ash_gray-800/80">
+                &copy; {new Date().getFullYear()} Mahadevan. All rights reserved.
+            </div>
         </form>
       </div>
       
