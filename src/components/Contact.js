@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react"; 
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
@@ -13,7 +15,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus("Sending...");
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch(BACKEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
