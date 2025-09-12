@@ -8,54 +8,14 @@ const categories = [
   { title: "Tools & Infra", desc: "Deployment and productivity.", items: ["MS Excel", "Git"] },
 ];
 
-const coreSkills = [
-  { name: "Python", pct: 92 },
-  { name: "SQL", pct: 88 },
-  { name: "LSTM / DL", pct: 80 },
-  { name: "Excel & BI", pct: 85 },
-];
-
 const allChips = [
   "React","Node.js","OpenCV","Scikit-learn","TensorFlow","Excel","Web Scraping",
   "Equity Trading","Tailwind v3","RAG Systems","HTML","CSS"
 ];
 
-function Circular({ pct, label }) {
-  // SVG circle progress: 36 * radius units => circumference formula below
-  const r = 28;
-  const c = 2 * Math.PI * r;
-  const offset = c - (pct / 100) * c;
-  return (
-    <div className="w-28 h-28 flex flex-col items-center justify-center">
-      <svg className="w-28 h-28 transform -rotate-90">
-        <defs>
-          <linearGradient id={`g-${label}`} x1="1" x2="0">
-            <stop offset="0%" stopColor="var(--forest)" />
-            <stop offset="100%" stopColor="var(--sage)" />
-          </linearGradient>
-        </defs>
-        <circle cx="40" cy="40" r={r} stroke="rgba(255,255,255,0.08)" strokeWidth="8" fill="none"/>
-        <circle
-          cx="40" cy="40" r={r}
-          stroke={`url(#g-${label})`}
-          strokeWidth="8" fill="none"
-          strokeDasharray={`${c} ${c}`}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 1s ease" }}
-        />
-      </svg>
-      <div className="absolute text-sm font-semibold -mt-2 text-dark">
-        <div className="text-base">{pct}%</div>
-        <div className="text-[11px] text-dark/75 -mt-1">{label}</div>
-      </div>
-    </div>
-  );
-}
 
 export default function SkillsHybrid() {
   useEffect(() => {
-    // optional: trigger animations if you want later
   }, []);
 
   return (
