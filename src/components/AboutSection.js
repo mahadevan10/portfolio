@@ -31,10 +31,10 @@ const timeline = [
       "Working knowledge of Python, Javascript, Excel; comfortable with ML workflows, data cleaning, model training and deployment.",
   },
   {
-    title: "Building Products",
-    subtitle: "Portfolio & Side Projects",
+    title: "Building Aavara",
+    subtitle: "Personal Project",
     description:
-      "Designing portfolio projects (web apps, ML demos) to showcase practical skills — focused on clarity, reproducibility and deployment.",
+      "Currently building Aavara, a platform to help users discover and book travel experiences in India.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function AboutSection() {
               About
             </h2>
             <p className="mt-3 text-[var(--ash-100)]/90 max-w-xl">
-              Hey — I'm Mahadevan. I build clean, well-documented ML and web projects that solve
+              Hey, I'm Mahadevan. I build clean, well-documented ML and web projects that solve
               practical problems. I enjoy turning data into insights and ideas into reproducible
               code.
             </p>
@@ -93,7 +93,7 @@ export default function AboutSection() {
 
         {/* Skills / chips styled as pills (circle option below) */}
         <div className="mt-12 flex flex-wrap gap-3">
-          {['Python', 'SQL', 'Machine Learning', 'LSTM', 'Data Engineering', 'React', 'Excel'].map(
+          {['Javascript','React','Python', 'Firebase','Vercel','Render', 'Machine Learning', 'LSTM', 'Data Engineering', 'Node', 'Excel'].map(
             (skill) => (
               <span
                 key={skill}

@@ -3,9 +3,9 @@
 import React, { useEffect } from "react";
 
 const categories = [
-  { title: "Programming", desc: "Clean, readable code & automation.", items: ["Python", "MERN stack"] },
+  { title: "Programming", desc: "Clean, readable & modular code.", items: ["Python", "MERN stack"] },
   { title: "ML & Data", desc: "Models, pipelines, and visualizations.", items: ["LSTM", "TensorFlow", "Pandas", "Numpy", "matplotlib"] },
-  { title: "Tools & Infra", desc: "Deployment and productivity.", items: ["MS Excel", "Git", "Render", "Huggingface"] },
+  { title: "Tools & Infra", desc: "Deployment and productivity.", items: ["MS Excel", "Git", "Render", "Huggingface", "Vercel"] },
 ];
 
 const allChips = [
@@ -30,7 +30,7 @@ export default function SkillsHybrid() {
             Skills
           </h2>
           <p className="text-base max-w-xl">
-            I combine engineering discipline with data-driven decision making — below are the tools and workflows I use regularly.
+            I combine engineering discipline with data-driven decision making. Below are the tools and workflows I use regularly.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">

@@ -85,22 +85,42 @@ export default function ProjectsGrid({ projects = [] }) {
                 <div className="flex items-center justify-between">
                   <div className="text-xs text-gray-500">{p.year || ''}</div>
 
-                  <a
-                    href={p.github || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-3 py-2 shadow-sm"
-                    style={{
-                      backgroundColor: 'var(--primary-600)',
-                      color: 'white',
-                      boxShadow: '0 6px 14px rgba(34,41,20,0.06)'
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 18.1V22" />
-                    </svg>
-                    View on GitHub
-                  </a>
+                  {p.website ? (
+                    <a
+                      href={p.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-3 py-2 shadow-sm"
+                      style={{
+                        backgroundColor: 'var(--primary-600)',
+                        color: 'white',
+                        boxShadow: '0 6px 14px rgba(34,41,20,0.06)'
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="feather feather-globe">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" />
+                      </svg>
+                      Go to website
+                    </a>
+                  ) : (
+                    <a
+                      href={p.github || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-3 py-2 shadow-sm"
+                      style={{
+                        backgroundColor: 'var(--primary-600)',
+                        color: 'white',
+                        boxShadow: '0 6px 14px rgba(34,41,20,0.06)'
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 18.1V22" />
+                      </svg>
+                      View on GitHub
+                    </a>
+                  )}
                 </div>
               </div>
             </article>

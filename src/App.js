@@ -9,14 +9,14 @@ import Contact from './components/Contact';
 
 
 const projects = [
-  {
+   {
     id: 'proj-1',
-    image: process.env.PUBLIC_URL + '/images/signLanguage.png',
-    title: 'Sign Language Recognizer',
-    description: 'LSTM-based model that translates sign gestures to text',
-    skills: ['Python', 'LSTM', 'OpenCV'],
-    github: 'https://github.com/mahadevan10/sign-language',
-    year: 2024
+    image: process.env.PUBLIC_URL + '/images/aavara.png',
+    title: 'Aavara app',
+    description: 'A platform with mobile first design to help users discover and book travel experiences in India.',
+    skills: ['React', 'Node.js', 'Express', 'Firebase','Vercel', 'Render','Git'],
+    website: 'https://aavara.vercel.app',
+    year: 2025
   },
   {
     id: 'proj-2',
@@ -24,7 +24,7 @@ const projects = [
     title: 'Reliance Stock Price Predictor',
     description: 'Regression and LSTM models to predict next-day stock price of Reliance',
     skills: ['Python', 'Pandas', 'LSTM', 'Scikit-learn'],
-    github: 'https://github.com/mahadevan10/reliance-stock-predictor',
+    github: 'https://github.com/mahadevan10/reliance-stock-movement-classifier',
     year: 2024
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: 'Kerala Laws Scraper + RAG chatbot',
     description: 'Scraper for extracting and structuring Kerala-specific acts from India Code and then using and RAG to answer questions on them',
     skills: ['Python', 'Playwright', 'SQLite', 'PDFPlumber'],
-    github: 'https://github.com/mahadevan10/kerala-law-scraper',
+    github: 'https://github.com/mahadevan10/keralaLawyer-RAG-bot',
     year: 2025,
     underWork: true
   },
@@ -41,7 +41,7 @@ const projects = [
     id: 'proj-4',
     image: process.env.PUBLIC_URL + '/images/todolist.png',
     title: 'Todo List App',
-    description: 'A simple full-stack todo list application with CRUD features',
+    description: 'A simple fullstack todo list application with CRUD features',
     skills: ['React', 'Node.js', 'Express', 'MongoDB'],
     github: 'https://github.com/mahadevan10/TODO-list-react',
     year: 2025
@@ -54,7 +54,16 @@ const projects = [
     skills: ['Huggingface Spaces', 'RoBERTa', 'NLP'],
     github: 'https://huggingface.co/spaces/mahadevan10/tweet-emotion-classifier',
     year: 2025
-  }
+  },
+  {
+    id: 'proj-6',
+    image: process.env.PUBLIC_URL + '/images/signLanguage.png',
+    title: 'Sign Language Recognizer',
+    description: 'LSTM based model that translates sign gestures to text',
+    skills: ['Python', 'LSTM', 'OpenCV'],
+    github: 'https://github.com/mahadevan10/SIgn-language-recognition-LSTM-openCV',
+    year: 2024
+  },
 ];
 
 
