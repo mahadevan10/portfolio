@@ -18,6 +18,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
 
   return (
     <header
+      id="hero"
       className="w-full min-h-screen flex items-center bg-fixed"
       // fallback gradient when bgImage not provided uses your palette
       style={

@@ -1,4 +1,3 @@
-
 // SkillsHybrid.jsx
 import React, { useEffect } from "react";
 
@@ -20,7 +19,7 @@ export default function SkillsHybrid() {
 
   return (
     <section id="skills" className="py-16 px-6" style={{
-      background: "var(--ash)", // set in root or tailwind config
+      background: "var(--sage)", 
       color: "var(--dark)"
     }}>
       <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-3">
@@ -35,16 +34,16 @@ export default function SkillsHybrid() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {categories.map(cat => (
-              <div key={cat.title} className="p-5 rounded-2xl shadow-md" style={{
-                background: "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02))",
-                border: "1px solid rgba(0,0,0,0.06)"
-              }}>
+              <div
+                key={cat.title}
+                className="p-5 rounded-2xl shadow-md bg-white border border-gray-100"
+              >
                 <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--wine)" }}>{cat.title}</h3>
                 <p className="text-sm text-dark/70 mb-3">{cat.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map(s => (
                     <span key={s} className="px-3 py-1 rounded-full text-sm font-medium" style={{
-                      background: "var(--earth)",
+                      background: "var(--stone)",
                       color: "var(--dark)"
                     }}>{s}</span>
                   ))}
@@ -60,7 +59,7 @@ export default function SkillsHybrid() {
               {allChips.map(c => (
                 <span key={c} className="text-xs px-3 py-1 rounded-full" style={{
                   border: "1px solid rgba(0,0,0,0.06)",
-                  background: "transparent",
+                  background: "var(--stone)",
                   color: "var(--dark)"
                 }}>{c}</span>
               ))}

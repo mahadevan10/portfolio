@@ -48,7 +48,7 @@ export default function Navbar({ resumeHref = process.env.PUBLIC_URL + "/resume.
     <nav className={`${navBase} ${scrolled ? navScrolled : navTop}`}>
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
+        <a href="#hero" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cambridge_blue-500 to-hookers_green-500 flex items-center justify-center text-white font-semibold overflow-hidden">
             {dp ? (
               <img src={dp} alt="Profile" className="w-10 h-10 rounded-full object-cover" />

@@ -16,3 +16,7 @@
   --ocean: #1b4965;     /* deep blue, secondary accent */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
