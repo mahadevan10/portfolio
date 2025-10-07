@@ -87,25 +87,26 @@ export default function Navbar({ resumeHref = process.env.PUBLIC_URL + "/resume.
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className={`md:hidden ${scrolled ? "bg-ash_gray-500/95" : "bg-ash_gray-500/95"} shadow-md transition-all duration-200`}>
-          <ul className="flex flex-col space-y-4 px-6 py-4 font-medium">
-            <li><a href="#about" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>About</a></li>
-            <li><a href="#projects" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Projects</a></li>
-            <li><a href="#skills" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Skills</a></li>
-            <li><a href="#contact" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Contact</a></li>
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} ${scrolled ? "bg-ash_gray-500/95" : "bg-ash_gray-500/30 backdrop-blur-sm"} shadow-md`}
+        style={{ pointerEvents: isOpen ? "auto" : "none" }}
+      >
+        <ul className="flex flex-col space-y-4 px-6 py-4 font-medium">
+          <li><a href="#about" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>About</a></li>
+          <li><a href="#projects" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Projects</a></li>
+          <li><a href="#skills" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Skills</a></li>
+          <li><a href="#contact" className={`${linkBase} ${scrolled ? linkScrolled : linkTop}`} onClick={() => setIsOpen(false)}>Contact</a></li>
 
-            <a
-              href={resumeHref}
-              download
-              className="bg-dark_slate_gray-500 text-ash_gray-900 px-4 py-2 rounded-xl text-center shadow hover:bg-hookers_green-500 hover:text-white transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Download Resume
-            </a>
-          </ul>
-        </div>
-      )}
+          <a
+            href={resumeHref}
+            download
+            className="bg-dark_slate_gray-500 text-ash_gray-900 px-4 py-2 rounded-xl text-center shadow hover:bg-hookers_green-500 hover:text-white transition"
+            onClick={() => setIsOpen(false)}
+          >
+            Download Resume
+          </a>
+        </ul>
+      </div>
     </nav>
   );
 }

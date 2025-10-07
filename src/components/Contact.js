@@ -14,6 +14,11 @@ export default function Contact({bgImage = ""}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+    setTimeout(() => {
+      if (status === "Sending...") {
+        setStatus("Sending...Might take a while due to free backend hosting");
+      }
+    }, 5000); // clear status after 5s
     try {
       const res = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",

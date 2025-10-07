@@ -1,9 +1,15 @@
 // server.js
+const express = require("express");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
+
+
 const allowedOrigins = [
   "http://localhost:3000",             // local React dev
   "https://mahadevan10.github.io"      // your deployed frontend
 ];
+
+const app = express();
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -18,20 +24,8 @@ app.use(cors({
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
-try {
-  if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-  }
-} catch (e) {
-  
-}
 
-const express = require("express");
-const cors = require("cors");
-const nodemailer = require("nodemailer");
 
-const app = express();
-app.use(cors()); // Allow requests from frontend
 app.use(express.json());
 
 app.post("/api/contact", async (req, res) => {
