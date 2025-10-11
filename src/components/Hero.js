@@ -1,4 +1,5 @@
 import React from "react";
+import VoiceBotButton from "./VoiceBotButton";
 
 /**
  * Hero component
@@ -37,7 +38,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
             {/* Left: Text */}
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-stone-200">
-                hey, you have reached{" "}
+                Hey, you have reached{" "}
                 <span className="block text-cambridge_blue-500">Mahadevan's Portfolio website</span>
               </h1>
 
@@ -62,6 +63,7 @@ export default function Hero({ bgImage = "", dp = "" }) {
                 >
                   Contact Me
                 </a>
+                <VoiceBotButton />
               </div>
             </div>
 

@@ -11,6 +11,15 @@ import Contact from './components/Contact';
 const projects = [
    {
     id: 'proj-1',
+    image: process.env.PUBLIC_URL + '/images/maddyBot.png',
+    title: 'Personal Voice Bot',
+    description: 'The bots answers like me, not a generic assistant, with responses kept ideally between 30-90 seconds. It also has barge-in capability.',
+    skills: ['Python', 'Flask', 'Docker', 'Google Cloud Platform', 'openAI', 'Git'],
+    website: 'https://voice-bot-web-28339467651.us-central1.run.app',
+    year: 2025
+   },
+   {
+    id: 'proj-2',
     image: process.env.PUBLIC_URL + '/images/aavara.png',
     title: 'Aavara app',
     description: 'A platform with mobile first design to help users discover and book travel experiences in India.',
@@ -19,7 +28,7 @@ const projects = [
     year: 2025
   },
   {
-    id: 'proj-2',
+    id: 'proj-3',
     image: process.env.PUBLIC_URL + '/images/prediction_plot.png',
     title: 'Reliance Stock Price Predictor',
     description: 'Regression and LSTM models to predict next-day stock price of Reliance',
@@ -28,7 +37,7 @@ const projects = [
     year: 2024
   },
   {
-    id: 'proj-3',
+    id: 'proj-4',
     image: process.env.PUBLIC_URL + '/images/RAG.png',
     title: 'Kerala Laws Scraper + RAG chatbot',
     description: 'Scraper for extracting and structuring Kerala-specific acts from India Code and then using and RAG to answer questions on them',
@@ -38,7 +47,7 @@ const projects = [
     underWork: true
   },
   {
-    id: 'proj-4',
+    id: 'proj-5',
     image: process.env.PUBLIC_URL + '/images/todolist.png',
     title: 'Todo List App',
     description: 'A simple fullstack todo list application with CRUD features',
@@ -47,7 +56,7 @@ const projects = [
     year: 2025
   },
   {
-    id: 'proj-5',
+    id: 'proj-6',
     image: process.env.PUBLIC_URL + '/images/tweet.png',
     title: 'Tweet Sentiment Analyzer',
     description: 'Analyzes sentiment of tweets using NLP techniques and classifies results',
@@ -56,7 +65,7 @@ const projects = [
     year: 2025
   },
   {
-    id: 'proj-6',
+    id: 'proj-7',
     image: process.env.PUBLIC_URL + '/images/signLanguage.png',
     title: 'Sign Language Recognizer',
     description: 'LSTM based model that translates sign gestures to text',

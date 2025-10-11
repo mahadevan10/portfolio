@@ -1,5 +1,6 @@
 // Navbar.js
 import React, { useState, useEffect } from "react";
+import VoiceBotButton from "./VoiceBotButton";
 
 const MenuIcon = ({ className = "w-7 h-7" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -76,6 +77,11 @@ export default function Navbar({ resumeHref = process.env.PUBLIC_URL + "/resume.
           Download Resume
         </a>
 
+        {/* VoiceBot Button */}
+        <div className="hidden md:inline-block ml-4">
+          <VoiceBotButton />
+        </div>
+
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -105,6 +111,10 @@ export default function Navbar({ resumeHref = process.env.PUBLIC_URL + "/resume.
           >
             Download Resume
           </a>
+
+          <li>
+            <VoiceBotButton className="w-full text-center" />
+          </li>
         </ul>
       </div>
     </nav>
