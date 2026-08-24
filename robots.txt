@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mahadevan10.github.io/portfolio/sitemap.xml
+
