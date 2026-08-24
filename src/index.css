@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --ash: #cad2c5;       /* ash_gray */
-  --dark: #1f2937;      /* dark slate */
-  --sage: #a0af97;      /* sage green */
-  --forest: #4f5c47;    /* forest green */
-  --earth: #f0c05a;     /* earth yellow */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+/* Offset anchor targets so the fixed navbar doesn't cover section headings. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
