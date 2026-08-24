@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Phone } from 'lucide-react'
+import SectionHeading from './SectionHeading'
 import { profile } from '../data/profile'
 
 const channels = [
@@ -12,7 +13,7 @@ export default function Contact() {
   return (
     <section id="contact" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Get in touch</h2>
+        <SectionHeading>Get in touch</SectionHeading>
         <p className="mt-3 max-w-prose text-faint">
           Open to conversations about agentic AI, trading systems, or interesting engineering problems.
         </p>
@@ -23,9 +24,9 @@ export default function Contact() {
               <a
                 href={href}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="flex items-center gap-4 bg-surface p-5 transition-colors hover:bg-paper"
+                className="flex h-full items-center gap-4 bg-surface p-5 transition-colors hover:bg-accent/5"
               >
-                <Icon size={20} className="shrink-0 text-faint" aria-hidden="true" />
+                <Icon size={20} className="shrink-0 text-accent" aria-hidden="true" />
                 <span className="min-w-0">
                   <span className="block font-mono text-xs uppercase tracking-widest text-faint">
                     {label}

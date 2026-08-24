@@ -48,12 +48,12 @@ export default function PipelineDiagram() {
               markerHeight="6"
               orient="auto-start-reverse"
             >
-              <path d="M0,0 L10,5 L0,10 z" className="fill-ink" />
+              <path d="M0,0 L10,5 L0,10 z" className="fill-accent" />
             </marker>
           </defs>
 
           {/* edges */}
-          <g className="stroke-ink" fill="none" strokeWidth="1.2" markerEnd="url(#arrow)" opacity="0.5">
+          <g className="stroke-accent" fill="none" strokeWidth="1.2" markerEnd="url(#arrow)" opacity="0.55">
             <path d={`M${EVENT.x + EVENT.w},${MID_Y} L${LEADER.x},${MID_Y}`} />
             {workers.map((w) => (
               <path key={`out-${w.label}`} d={curve(LEADER.x + LEADER.w, MID_Y, WORKER.x, w.center)} />
@@ -72,7 +72,7 @@ export default function PipelineDiagram() {
               width={EVENT.w}
               height={NODE_H}
               rx="8"
-              className="fill-surface stroke-ink"
+              className="fill-surface stroke-accent/50"
               strokeWidth="1.4"
             />
             <text x={EVENT.x + EVENT.w / 2} y={MID_Y + 5} textAnchor="middle" className="fill-ink font-mono" fontSize="13">
@@ -88,10 +88,10 @@ export default function PipelineDiagram() {
               width={LEADER.w}
               height={LEADER.h}
               rx="8"
-              className="fill-surface stroke-ink"
+              className="fill-accent/5 stroke-accent"
               strokeWidth="1.8"
             />
-            <text x={LEADER.x + LEADER.w / 2} y={MID_Y - 5} textAnchor="middle" className="fill-ink font-sans" fontSize="14" fontWeight="600">
+            <text x={LEADER.x + LEADER.w / 2} y={MID_Y - 5} textAnchor="middle" className="fill-accent font-sans" fontSize="14" fontWeight="600">
               leader agent
             </text>
             <text x={LEADER.x + LEADER.w / 2} y={MID_Y + 13} textAnchor="middle" className="fill-faint font-mono" fontSize="11">
@@ -108,7 +108,7 @@ export default function PipelineDiagram() {
                 width={WORKER.w}
                 height={NODE_H}
                 rx="8"
-                className="fill-surface stroke-ink"
+                className="fill-surface stroke-accent/50"
                 strokeWidth="1.2"
               />
               <text x={WORKER.x + WORKER.w / 2} y={w.center + 4} textAnchor="middle" className="fill-ink font-mono" fontSize="12">
@@ -125,10 +125,10 @@ export default function PipelineDiagram() {
               width={SYNTH.w}
               height={SYNTH.h}
               rx="8"
-              className="fill-surface stroke-ink"
+              className="fill-accent/5 stroke-accent"
               strokeWidth="1.8"
             />
-            <text x={SYNTH.x + SYNTH.w / 2} y={MID_Y - 5} textAnchor="middle" className="fill-ink font-sans" fontSize="14" fontWeight="600">
+            <text x={SYNTH.x + SYNTH.w / 2} y={MID_Y - 5} textAnchor="middle" className="fill-accent font-sans" fontSize="14" fontWeight="600">
               synthesis
             </text>
             <text x={SYNTH.x + SYNTH.w / 2} y={MID_Y + 13} textAnchor="middle" className="fill-faint font-mono" fontSize="11">

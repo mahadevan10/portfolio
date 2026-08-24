@@ -17,6 +17,14 @@ h4 {
   text-wrap: balance;
 }
 
+::selection {
+  @apply bg-accent/15;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent;
+}
+
 /* Offset anchor targets so the fixed navbar doesn't cover section headings. */
 section[id] {
   scroll-margin-top: 5rem;

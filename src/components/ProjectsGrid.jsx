@@ -1,3 +1,5 @@
+import SectionHeading from './SectionHeading'
+
 const GlobeIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="12" cy="12" r="10" />
@@ -15,8 +17,8 @@ export default function ProjectsGrid({ projects = [] }) {
   return (
     <section id="projects" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Projects</h2>
+        <div className="flex flex-wrap items-end justify-between gap-2">
+          <SectionHeading>Projects</SectionHeading>
           <p className="text-sm text-faint">Things I built to learn, and a few that stuck.</p>
         </div>
 
@@ -24,10 +26,11 @@ export default function ProjectsGrid({ projects = [] }) {
           {projects.map((p) => (
             <article
               key={p.id}
-              className="relative flex flex-col overflow-hidden rounded-xl border border-mist bg-surface transition-colors hover:border-ink/25"
+              className="group relative flex flex-col overflow-hidden rounded-xl border border-mist bg-surface transition-colors hover:border-accent/40"
             >
               {p.underWork && (
-                <span className="absolute right-3 top-3 z-10 rounded-full border border-mist bg-paper px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-down">
+                <span className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-down/25 bg-paper px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-down">
+                  <span className="h-1.5 w-1.5 rounded-full bg-down" aria-hidden="true" />
                   Under work
                 </span>
               )}
@@ -66,7 +69,7 @@ export default function ProjectsGrid({ projects = [] }) {
                     href={p.website || p.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium underline decoration-mist underline-offset-4 transition-colors hover:decoration-ink"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:decoration-accent"
                   >
                     {p.website ? <GlobeIcon /> : <GithubIcon />}
                     {p.website ? 'Visit' : 'Source'}

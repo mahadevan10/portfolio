@@ -56,7 +56,7 @@ export default function Navbar() {
           <ul className="flex items-center gap-6 text-sm">
             {links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-faint transition-colors hover:text-ink">
+                <a href={l.href} className="text-faint transition-colors hover:text-accent">
                   {l.label}
                 </a>
               </li>
@@ -65,9 +65,9 @@ export default function Navbar() {
           <a
             href={profile.resume}
             download
-            className="rounded-full border border-ink px-4 py-1.5 text-sm font-medium transition-colors hover:bg-ink hover:text-paper"
+            className="rounded-full border border-accent px-4 py-1.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
           >
-            Résumé
+            Resume
           </a>
         </div>
 
@@ -91,7 +91,7 @@ export default function Navbar() {
         <ul className="flex flex-col gap-4 px-6 py-5 text-sm">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-faint transition-colors hover:text-ink" onClick={close}>
+              <a href={l.href} className="text-faint transition-colors hover:text-accent" onClick={close}>
                 {l.label}
               </a>
             </li>
@@ -101,9 +101,9 @@ export default function Navbar() {
               href={profile.resume}
               download
               onClick={close}
-              className="inline-block rounded-full border border-ink px-4 py-1.5 font-medium"
+              className="inline-block rounded-full border border-accent px-4 py-1.5 font-medium text-accent"
             >
-              Résumé
+              Resume
             </a>
           </li>
         </ul>

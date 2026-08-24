@@ -9,6 +9,7 @@ export default {
         ink: '#14181a',
         mist: '#e2e5e0',
         faint: '#667069',
+        accent: '#14505f',
         up: '#127a4d',
         down: '#b4342a',
       },

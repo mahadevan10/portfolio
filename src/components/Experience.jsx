@@ -1,4 +1,5 @@
 import PipelineDiagram from './PipelineDiagram'
+import SectionHeading from './SectionHeading'
 import { winbold, codecraft } from '../data/experience'
 
 function FactsRail() {
@@ -9,15 +10,15 @@ function FactsRail() {
         <div className="hidden lg:block">
           <dl className="space-y-4 text-sm">
             <div>
-              <dt className="font-mono text-xs uppercase tracking-widest text-faint">Role</dt>
+              <dt className="font-mono text-xs uppercase tracking-widest text-accent">Role</dt>
               <dd className="mt-1">{winbold.role}</dd>
             </div>
             <div>
-              <dt className="font-mono text-xs uppercase tracking-widest text-faint">Duration</dt>
+              <dt className="font-mono text-xs uppercase tracking-widest text-accent">Duration</dt>
               <dd className="mt-1 font-mono text-xs">{winbold.period}</dd>
             </div>
             <div>
-              <dt className="font-mono text-xs uppercase tracking-widest text-faint">Stack</dt>
+              <dt className="font-mono text-xs uppercase tracking-widest text-accent">Stack</dt>
               <dd className="mt-1 font-mono text-xs leading-relaxed text-faint">
                 {winbold.stack.join(' · ')}
               </dd>
@@ -51,12 +52,12 @@ export default function Experience() {
   return (
     <section id="experience" className="border-t border-mist bg-surface">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Experience</h2>
+        <SectionHeading>Experience</SectionHeading>
 
         {/* Winbold */}
         <article className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_260px]">
           <div className="min-w-0">
-            <p className="font-mono text-xs uppercase tracking-widest text-faint">{winbold.company}</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-accent">{winbold.company}</p>
             <h3 className="mt-2 font-display text-2xl font-semibold sm:text-3xl">
               {winbold.title}
             </h3>
@@ -73,7 +74,7 @@ export default function Experience() {
 
             <div className="mt-6 space-y-6">
               {winbold.problems.map((p) => (
-                <div key={p.heading} className="max-w-prose">
+                <div key={p.heading} className="max-w-prose border-l-2 border-accent/25 pl-4">
                   <h4 className="font-display text-lg font-semibold">{p.heading}</h4>
                   <p className="mt-1.5 leading-relaxed text-faint">{p.body}</p>
                 </div>
@@ -89,7 +90,7 @@ export default function Experience() {
         </article>
 
         {/* CodeCraft Ventures */}
-        <article className="mt-16 border-l-2 border-mist pl-6">
+        <article className="mt-16 border-l-2 border-accent/30 pl-6">
           <h3 className="font-display text-xl font-semibold">{codecraft.company}</h3>
           <p className="mt-1 font-mono text-xs text-faint">
             {codecraft.role} · {codecraft.period}

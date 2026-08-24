@@ -1,3 +1,4 @@
+import SectionHeading from './SectionHeading'
 import { about } from '../data/profile'
 
 export default function About() {
@@ -6,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-3xl font-semibold sm:text-4xl">About</h2>
+        <SectionHeading>About</SectionHeading>
 
         <div className="mt-8 max-w-prose space-y-5">
           {about.paragraphs.map((p, i) => (
@@ -16,8 +17,8 @@ export default function About() {
           ))}
         </div>
 
-        <div className="mt-10 border-l-2 border-mist pl-5">
-          <p className="font-mono text-xs uppercase tracking-widest text-faint">Education</p>
+        <div className="mt-10 border-l-2 border-accent/30 pl-5">
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">Education</p>
           <p className="mt-2 font-medium">{degree}</p>
           <p className="text-sm text-faint">
             {university} <span className="text-mist">·</span> {college}
