@@ -49,7 +49,7 @@ export default function Navbar() {
             height="32"
             className="h-8 w-8 rounded-full object-cover"
           />
-          <span className="font-display text-base font-bold tracking-tight">{profile.shortName}</span>
+          <span className="font-display text-lg font-semibold">{profile.shortName}</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

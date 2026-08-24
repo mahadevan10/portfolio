@@ -4,7 +4,7 @@ export default function Skills() {
   return (
     <section id="skills" className="border-t border-mist bg-surface">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Skills</h2>
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Skills</h2>
 
         <dl className="mt-10 space-y-8">
           {skillGroups.map((group) => (

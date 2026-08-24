@@ -16,7 +16,7 @@ export default function ProjectsGrid({ projects = [] }) {
     <section id="projects" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Projects</h2>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Projects</h2>
           <p className="text-sm text-faint">Things I built to learn, and a few that stuck.</p>
         </div>
 
@@ -46,7 +46,7 @@ export default function ProjectsGrid({ projects = [] }) {
               </div>
 
               <div className="flex flex-1 flex-col p-5">
-                <h3 className="font-display text-base font-bold tracking-tight">{p.title}</h3>
+                <h3 className="font-display text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-faint">{p.description}</p>
 
                 <div className="mt-4 flex flex-wrap gap-1.5">

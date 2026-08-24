@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">About</h2>
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">About</h2>
 
         <div className="mt-8 max-w-prose space-y-5">
           {about.paragraphs.map((p, i) => (

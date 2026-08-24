@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <section id="contact" className="border-t border-mist">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">Get in touch</h2>
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Get in touch</h2>
         <p className="mt-3 max-w-prose text-faint">
           Open to conversations about agentic AI, trading systems, or interesting engineering problems.
         </p>

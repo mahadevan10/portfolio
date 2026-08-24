@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#fbfbf9',
+        paper: '#fafaf7',
         surface: '#ffffff',
-        ink: '#16191c',
-        mist: '#e3e5e0',
-        faint: '#6a7178',
-        up: '#177a4c',
-        down: '#b42318',
+        ink: '#14181a',
+        mist: '#e2e5e0',
+        faint: '#667069',
+        up: '#127a4d',
+        down: '#b4342a',
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        display: ['Newsreader', 'Georgia', 'serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       maxWidth: {
         prose: '68ch',

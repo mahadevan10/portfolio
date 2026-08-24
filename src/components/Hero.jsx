@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="flex flex-col-reverse items-start gap-10 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-prose">
           <p className="font-mono text-xs uppercase tracking-widest text-faint">{profile.role}</p>
-          <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[1.1] sm:text-6xl">
             {profile.tagline}
           </h1>
           <p className="mt-5 text-base leading-relaxed text-faint">{profile.intro}</p>

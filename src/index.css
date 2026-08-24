@@ -10,6 +10,13 @@ body {
   @apply bg-paper text-ink font-sans antialiased;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
 /* Offset anchor targets so the fixed navbar doesn't cover section headings. */
 section[id] {
   scroll-margin-top: 5rem;
