@@ -91,7 +91,14 @@ export default function Experience() {
 
         {/* CodeCraft Ventures */}
         <article className="mt-16 border-l-2 border-accent/30 pl-6">
-          <h3 className="font-display text-xl font-semibold">{codecraft.company}</h3>
+          <h3 className="font-display text-xl font-semibold">
+            {codecraft.company}
+            <a href="https://siyadmohammed.github.io/codecraftventures/" className="ml-2 text-accent hover:text-accent-hover">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                <path d="M10 6L14 10L10 14V18H6V14L2 10L6 6H10Z" />
+              </svg>
+            </a>
+          </h3>
           <p className="mt-1 font-mono text-xs text-faint">
             {codecraft.role} · {codecraft.period}
           </p>
