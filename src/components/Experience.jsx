@@ -1,5 +1,5 @@
 import React from 'react';
-import { winbold } from '../../data/experience';
+import { winbold, codecraft } from '../../data/experience';
 
 function FactsRail() {
   return (
@@ -46,6 +46,25 @@ export default function Experience() {
             </p>
             <p className="mt-4 text-base font-medium text-faint">
               {winbold.description}
+            </p>
+          </div>
+          <div className="hidden lg:block">
+            <FactsRail />
+          </div>
+        </article>
+
+        {/* CodeCraft Ventures */}
+        <article className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_260px]">
+          <div className="min-w-0">
+            <p className="font-mono text-xs uppercase tracking-widest text-accent">{codecraft.company}</p>
+            <h3 className="mt-2 font-display text-2xl font-semibold leading-[1.1] sm:text-3xl">
+              {codecraft.title}
+            </h3>
+            <p className="mt-2 text-lg font-medium text-faint">
+              {codecraft.period}
+            </p>
+            <p className="mt-4 text-base font-medium text-faint">
+              {codecraft.paragraphs.join(' ')}
             </p>
           </div>
           <div className="hidden lg:block">
