@@ -1,45 +1,76 @@
-import { Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone, ArrowUpRight, Radio } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { profile } from '../data/profile'
 
 const channels = [
-  { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
-  { icon: Linkedin, label: 'LinkedIn', value: 'in/mahadevanmn10', href: profile.linkedin, external: true },
-  { icon: Github, label: 'GitHub', value: 'mahadevan10', href: profile.github, external: true },
-  { icon: Phone, label: 'Phone', value: profile.phone, href: profile.phoneHref },
+  { icon: Mail, label: 'Secure Email', value: profile.email, href: `mailto:${profile.email}`, detail: 'Direct communication' },
+  { icon: Linkedin, label: 'LinkedIn Network', value: 'in/mahadevanmn10', href: profile.linkedin, external: true, detail: 'Professional profile' },
+  { icon: Github, label: 'GitHub Artifacts', value: 'mahadevan10', href: profile.github, external: true, detail: 'Open source & code' },
+  { icon: Phone, label: 'Phone / Signal', value: profile.phone, href: profile.phoneHref, detail: 'Voice communication' },
 ]
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-mist">
-      <div className="mx-auto max-w-5xl px-6 py-20">
-        <SectionHeading>Get in touch</SectionHeading>
-        <p className="mt-3 max-w-prose text-faint">
-          Open to conversations about agentic AI, trading systems, or interesting engineering problems.
-        </p>
+    <section id="contact" className="relative border-t border-white/10 bg-paper/95 py-24">
+      {/* Background ambient lighting */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/5 blur-[140px]"
+      />
 
-        <ul className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-mist bg-mist sm:grid-cols-2">
-          {channels.map(({ icon: Icon, label, value, href, external }) => (
-            <li key={label}>
-              <a
-                href={href}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="flex h-full items-center gap-4 bg-surface p-5 transition-colors hover:bg-accent/5"
-              >
-                <Icon size={20} className="shrink-0 text-accent" aria-hidden="true" />
-                <span className="min-w-0">
-                  <span className="block font-mono text-xs uppercase tracking-widest text-faint">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="max-w-prose">
+          <SectionHeading id="contact-heading" tag="UPLINK_CONSOLE">
+            Establish Uplink
+          </SectionHeading>
+          <p className="mt-3 text-base text-slate-400">
+            Open to conversations about agentic AI, quantitative trading systems, or interesting distributed systems engineering problems.
+          </p>
+        </div>
+
+        {/* Channel Uplink Grid */}
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {channels.map(({ icon: Icon, label, value, href, external, detail }) => (
+            <a
+              key={label}
+              href={href}
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-surface/60 p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-surface/90 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)]"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-950/40 text-cyan-400 group-hover:scale-105 group-hover:border-cyan-400/50 transition-all">
+                  <Icon size={20} />
+                </div>
+                <div className="min-w-0">
+                  <div className="font-mono text-[10px] uppercase tracking-wider text-slate-500">
                     {label}
-                  </span>
-                  <span className="block truncate text-sm">{value}</span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+                  </div>
+                  <div className="truncate font-mono text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                    {value}
+                  </div>
+                  <div className="text-[11px] text-slate-400">
+                    {detail}
+                  </div>
+                </div>
+              </div>
 
-        <footer className="mt-16 border-t border-mist pt-6 text-xs text-faint">
-          © {new Date().getFullYear()} {profile.name}. Built with React, Vite and Tailwind CSS.
+              <div className="ml-4 shrink-0 text-slate-500 group-hover:text-cyan-400 transition-colors">
+                <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* Futuristic Terminal Footer */}
+        <footer className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row text-xs font-mono text-slate-500">
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>ALL AGENTS & SERVICES OPERATIONAL</span>
+          </div>
+
+          <div>
+            © {new Date().getFullYear()} {profile.name} · Antigravity Design Edition
+          </div>
         </footer>
       </div>
     </section>

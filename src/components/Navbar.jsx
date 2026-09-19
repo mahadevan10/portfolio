@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { profile } from '../data/profile'
+import { FileDown, Menu, X, Terminal, Radio } from 'lucide-react'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -9,24 +10,12 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ]
 
-const MenuIcon = ({ className = 'w-6 h-6' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <path d="M4 7h16M4 12h16M4 17h16" />
-  </svg>
-)
-
-const XIcon = ({ className = 'w-6 h-6' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <path d="M18 6L6 18M6 6l12 12" />
-  </svg>
-)
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -35,79 +24,112 @@ export default function Navbar() {
   const close = () => setIsOpen(false)
 
   return (
-    <nav
-      className={`fixed top-0 left-0 z-50 w-full bg-paper/90 backdrop-blur-sm transition-colors duration-300 ${
-        scrolled ? 'border-b border-mist' : 'border-b border-transparent'
-      }`}
-    >
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-3" onClick={close}>
-          <img
-            src={profile.photo}
-            alt=""
-            width="32"
-            height="32"
-            className="h-8 w-8 rounded-full object-cover"
-          />
-          <span className="font-display text-lg font-semibold">{profile.shortName}</span>
-        </a>
-
-        <div className="hidden items-center gap-8 md:flex">
-          <ul className="flex items-center gap-6 text-sm">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="text-faint transition-colors hover:text-accent">
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a
-            href={profile.resume}
-            download
-            className="rounded-full border border-accent px-4 py-1.5 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-white"
-          >
-            Resume
-          </a>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-label="Toggle menu"
-          className="rounded-md p-1.5 text-ink transition-colors hover:bg-mist md:hidden"
-        >
-          {isOpen ? <XIcon /> : <MenuIcon />}
-        </button>
-      </div>
-
-      <div
-        className={`overflow-hidden border-t border-mist bg-paper transition-all duration-300 md:hidden ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 border-transparent opacity-0'
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-3 sm:py-4 transition-all duration-300">
+      <nav
+        className={`w-full max-w-5xl rounded-2xl border transition-all duration-300 ${
+          scrolled
+            ? 'border-white/15 bg-surface/85 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl'
+            : 'border-white/10 bg-surface/60 backdrop-blur-lg'
         }`}
-        style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
       >
-        <ul className="flex flex-col gap-4 px-6 py-5 text-sm">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-faint transition-colors hover:text-accent" onClick={close}>
-                {l.label}
-              </a>
-            </li>
-          ))}
-          <li>
+        <div className="flex items-center justify-between px-4 py-2.5 sm:px-6">
+          {/* Identity & Status Beacon */}
+          <a href="#top" className="flex items-center gap-3 group" onClick={close}>
+            <div className="relative">
+              <img
+                src={profile.photo}
+                alt=""
+                width="36"
+                height="36"
+                className="h-9 w-9 rounded-full object-cover ring-1 ring-cyan-500/40 transition-transform group-hover:scale-105"
+              />
+              <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-display text-sm font-bold tracking-tight text-white group-hover:text-accent transition-colors sm:text-base">
+                  {profile.shortName}
+                </span>
+                <span className="hidden rounded border border-cyan-500/30 bg-cyan-950/40 px-1.5 py-0.2 font-mono text-[9px] uppercase tracking-wider text-cyan-300 sm:inline-block">
+                  AI / SYS
+                </span>
+              </div>
+            </div>
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden items-center gap-8 md:flex">
+            <ul className="flex items-center gap-6 font-mono text-xs tracking-wide">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    className="text-faint transition-all hover:text-cyan-300 hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="h-4 w-px bg-white/10" aria-hidden="true" />
+
+            {/* Resume Button */}
             <a
               href={profile.resume}
               download
-              onClick={close}
-              className="inline-block rounded-full border border-accent px-4 py-1.5 font-medium text-accent"
+              className="flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-950/30 px-4 py-1.5 font-mono text-xs font-medium text-cyan-300 shadow-[0_0_15px_-3px_rgba(6,182,212,0.25)] transition-all hover:border-cyan-400 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]"
             >
-              Resume
+              <FileDown size={13} />
+              <span>Resume</span>
             </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation menu"
+            className="rounded-lg border border-white/10 p-2 text-faint hover:bg-white/5 hover:text-white md:hidden"
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Panel */}
+        {isOpen && (
+          <div className="border-t border-white/10 px-6 py-5 md:hidden">
+            <ul className="flex flex-col gap-4 font-mono text-sm">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={close}
+                    className="block text-faint transition-colors hover:text-cyan-300"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+              <li className="pt-2">
+                <a
+                  href={profile.resume}
+                  download
+                  onClick={close}
+                  className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-950/40 px-4 py-2 font-mono text-xs font-medium text-cyan-300"
+                >
+                  <FileDown size={13} />
+                  <span>Download Resume</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </nav>
+    </header>
   )
 }
