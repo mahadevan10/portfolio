@@ -69,16 +69,16 @@ export default function ProjectsGrid({ projects = [] }) {
   ]
 
   return (
-    <section id="projects" className="relative border-t border-white/10 bg-paper/95 py-24">
+    <section id="projects" className="relative border-t border-white/10 bg-paper/95 py-16 sm:py-24">
       {/* Ambient background glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-0 top-1/3 -z-10 h-[500px] w-[500px] rounded-full bg-violet-500/5 blur-[120px]"
       />
 
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Section Header with Category Filter */}
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-5 sm:gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <SectionHeading id="projects-heading" tag="MISSION_LOG_02">
               Featured Projects
@@ -92,7 +92,7 @@ export default function ProjectsGrid({ projects = [] }) {
           <div
             role="tablist"
             aria-label="Filter projects by category"
-            className="flex flex-wrap items-center gap-1.5 rounded-2xl border border-white/10 bg-surface/80 p-1.5 backdrop-blur-xl shadow-lg"
+            className="flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-scroll rounded-2xl border border-white/10 bg-surface/80 p-1.5 backdrop-blur-xl shadow-lg sm:flex-wrap"
           >
             {filterTabs.map((tab) => {
               const isActive = activeFilter === tab.id
@@ -102,7 +102,7 @@ export default function ProjectsGrid({ projects = [] }) {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveFilter(tab.id)}
-                  className={`flex items-center gap-2 rounded-xl px-3.5 py-1.5 font-mono text-xs transition-all duration-200 ${
+                  className={`flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 font-mono text-xs transition-all duration-200 ${
                     isActive
                       ? 'bg-cyan-500 text-black font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)]'
                       : 'text-slate-400 hover:bg-white/5 hover:text-white'
@@ -124,7 +124,7 @@ export default function ProjectsGrid({ projects = [] }) {
 
         {/* Featured Flagship Project (Shown in "All" view) */}
         {featuredProject && (
-          <div className="mt-12">
+          <div className="mt-10 sm:mt-12">
             <article className="group relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-surface/70 shadow-[0_0_40px_rgba(6,182,212,0.06)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_50px_rgba(6,182,212,0.15)]">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Media Preview (5 cols) */}
@@ -187,13 +187,13 @@ export default function ProjectsGrid({ projects = [] }) {
                   </div>
 
                   {/* Actions */}
-                  <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
+                  <div className="mt-8 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3 border-t border-white/10 pt-5">
                     {featuredProject.website && (
                       <a
                         href={featuredProject.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-5 py-2.5 font-mono text-xs font-semibold text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)]"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-5 py-2.5 font-mono text-xs font-semibold text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)]"
                       >
                         <span>Launch Application</span>
                         <ArrowUpRight size={15} />
@@ -204,7 +204,7 @@ export default function ProjectsGrid({ projects = [] }) {
                         href={featuredProject.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-surface px-5 py-2.5 font-mono text-xs font-medium text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-white"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-surface px-5 py-2.5 font-mono text-xs font-medium text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-white"
                       >
                         <Github size={15} />
                         <span>Inspect Source</span>
@@ -284,8 +284,8 @@ export default function ProjectsGrid({ projects = [] }) {
                   </div>
 
                   {/* Actions Footer */}
-                  <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs">
-                    <div className="flex items-center gap-3.5">
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-4 font-mono text-xs">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-3.5">
                       {p.website && (
                         <a
                           href={p.website}

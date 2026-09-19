@@ -12,14 +12,14 @@ const groupIcons = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative border-t border-white/10 bg-paper/90 py-24">
+    <section id="skills" className="relative border-t border-white/10 bg-paper/90 py-16 sm:py-24">
       {/* Ambient background light */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-10 top-1/2 -z-10 h-[400px] w-[400px] rounded-full bg-cyan-500/5 blur-[120px]"
       />
 
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading id="skills-heading" tag="MISSION_LOG_03">
           Technical Arsenal
         </SectionHeading>
@@ -28,13 +28,13 @@ export default function Skills() {
           Core competencies spanning agentic orchestration, distributed systems, and production reliability.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group) => {
             const Icon = groupIcons[group.title] || Cpu
             return (
               <div
                 key={group.title}
-                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-surface/60 p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/40 hover:bg-surface/80 hover:shadow-[0_8px_30px_rgba(6,182,212,0.1)]"
+                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-surface/60 p-5 sm:p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/40 hover:bg-surface/80 hover:shadow-[0_8px_30px_rgba(6,182,212,0.1)]"
               >
                 <div>
                   <div className="flex items-center gap-3 border-b border-white/10 pb-4">

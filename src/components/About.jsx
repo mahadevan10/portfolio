@@ -6,22 +6,22 @@ export default function About() {
   const { degree, university, college, years } = about.education
 
   return (
-    <section id="about" className="relative border-t border-white/10 bg-paper/90 py-24">
+    <section id="about" className="relative border-t border-white/10 bg-paper/90 py-16 sm:py-24">
       {/* Background glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/4 top-0 -z-10 h-[450px] w-[450px] rounded-full bg-cyan-500/5 blur-[120px]"
       />
 
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading id="about-heading" tag="IDENTITY_MODULE">
           About & Background
         </SectionHeading>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-12">
           {/* Engineering Narrative (7 cols) */}
           <div className="space-y-6 lg:col-span-7">
-            <div className="rounded-2xl border border-white/10 bg-surface/60 p-6 sm:p-8 backdrop-blur-xl shadow-lg">
+            <div className="rounded-2xl border border-white/10 bg-surface/60 p-5 sm:p-8 backdrop-blur-xl shadow-lg">
               <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
                 <Compass size={14} />
                 <span>Engineering Ethos</span>
@@ -39,7 +39,7 @@ export default function About() {
 
           {/* Education & Credential Card (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl border border-white/10 bg-surface/60 p-6 sm:p-8 backdrop-blur-xl shadow-lg transition-all hover:border-cyan-500/40">
+            <div className="rounded-2xl border border-white/10 bg-surface/60 p-5 sm:p-8 backdrop-blur-xl shadow-lg transition-all hover:border-cyan-500/40">
               <div className="flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
                 <GraduationCap size={16} />
                 <span>Academic Foundation</span>

@@ -3,7 +3,7 @@ import { asset } from './profile'
 export const projects = [
   {
     id: 'proj-1',
-    image: asset('images/plusone.png'),
+    image: asset('images/plusone_reimagined.jpg'),
     title: 'PlusOne',
     description:
       'Designed, architected, and engineered from the ground up by Codecraft. PlusOne empowers members to discover local nightlife, spontaneous social events, and connect with verified companions in real time. Engineered with high-speed intent routing, instant messaging streams, and seamless mobile-first PWA responsiveness.',
@@ -13,7 +13,7 @@ export const projects = [
   },
   {
     id: 'proj-2',
-    image: asset('images/aavara.png'),
+    image: asset('images/aavara_reimagined.jpg'),
     title: 'Aavara app',
     description:
       'A platform with mobile first design to help users discover and book travel experiences in India.',
@@ -23,7 +23,7 @@ export const projects = [
   },
   {
     id: 'proj-3',
-    image: asset('images/prediction_plot.png'),
+    image: asset('images/prediction_reimagined.jpg'),
     title: 'Reliance Stock Price Predictor',
     description: 'Regression and LSTM models to predict next-day stock price of Reliance.',
     skills: ['Python', 'Pandas', 'LSTM', 'Scikit-learn'],
@@ -32,7 +32,7 @@ export const projects = [
   },
   {
     id: 'proj-4',
-    image: asset('images/RAG.jpg'),
+    image: asset('images/rag_reimagined.jpg'),
     title: 'Kerala Laws Scraper + RAG chatbot',
     description:
       'Scraper for extracting and structuring Kerala-specific acts from India Code, then a RAG pipeline to answer questions on them.',
@@ -43,7 +43,7 @@ export const projects = [
   },
   {
     id: 'proj-5',
-    image: asset('images/todolist.png'),
+    image: asset('images/todolist_reimagined.jpg'),
     title: 'Todo List App',
     description: 'A simple fullstack todo list application with CRUD features.',
     skills: ['React', 'Node.js', 'Express', 'MongoDB'],
@@ -52,7 +52,7 @@ export const projects = [
   },
   {
     id: 'proj-6',
-    image: asset('images/tweet.png'),
+    image: asset('images/tweet_reimagined.jpg'),
     title: 'Tweet Sentiment Analyzer',
     description: 'Analyzes sentiment of tweets using NLP techniques and classifies results.',
     skills: ['Huggingface Spaces', 'RoBERTa', 'NLP'],
@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     id: 'proj-7',
-    image: asset('images/signLanguage.jpg'),
+    image: asset('images/signlanguage_reimagined.jpg'),
     title: 'Sign Language Recognizer',
     description: 'LSTM based model that translates sign gestures to text.',
     skills: ['Python', 'LSTM', 'OpenCV'],
@@ -70,12 +70,12 @@ export const projects = [
   },
   {
     id: 'proj-8',
-    image: asset('images/maddyBot.jpg'),
+    image: asset('images/maddybot_reimagined.jpg'),
     title: 'Personal Voice Bot',
     description:
       'The bot answers like me, not a generic assistant, with responses kept ideally between 30-90 seconds. It also has barge-in capability.',
     skills: ['Python', 'Flask', 'Docker', 'Google Cloud Platform', 'openAI', 'Git'],
     website: 'https://voice-bot-web-28339467651.us-central1.run.app',
     year: 2025,
-  },  
+  },
 ]

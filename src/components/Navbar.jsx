@@ -16,9 +16,23 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setIsOpen(false)
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize, { passive: true })
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
   }, [])
 
   const close = () => setIsOpen(false)
@@ -52,9 +66,6 @@ export default function Navbar() {
               <div className="flex items-center gap-2">
                 <span className="font-display text-sm font-bold tracking-tight text-white group-hover:text-accent transition-colors sm:text-base">
                   {profile.shortName}
-                </span>
-                <span className="hidden rounded border border-cyan-500/30 bg-cyan-950/40 px-1.5 py-0.2 font-mono text-[9px] uppercase tracking-wider text-cyan-300 sm:inline-block">
-                  AI / SYS
                 </span>
               </div>
             </div>
@@ -94,7 +105,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle navigation menu"
-            className="rounded-lg border border-white/10 p-2 text-faint hover:bg-white/5 hover:text-white md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-faint hover:bg-white/5 hover:text-white md:hidden"
           >
             {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -102,14 +113,14 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Panel */}
         {isOpen && (
-          <div className="border-t border-white/10 px-6 py-5 md:hidden">
-            <ul className="flex flex-col gap-4 font-mono text-sm">
+          <div className="border-t border-white/10 px-5 py-4 sm:px-6 sm:py-5 md:hidden">
+            <ul className="flex flex-col gap-3 font-mono text-sm">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
                     onClick={close}
-                    className="block text-faint transition-colors hover:text-cyan-300"
+                    className="block py-1 text-faint transition-colors hover:text-cyan-300 active:text-cyan-300"
                   >
                     {l.label}
                   </a>
@@ -120,9 +131,9 @@ export default function Navbar() {
                   href={profile.resume}
                   download
                   onClick={close}
-                  className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-950/40 px-4 py-2 font-mono text-xs font-medium text-cyan-300"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-950/40 py-2.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:bg-cyan-500 hover:text-black"
                 >
-                  <FileDown size={13} />
+                  <FileDown size={14} />
                   <span>Download Resume</span>
                 </a>
               </li>

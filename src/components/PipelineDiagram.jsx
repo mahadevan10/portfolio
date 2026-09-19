@@ -1,4 +1,4 @@
-import { Activity, ShieldCheck, Zap } from 'lucide-react'
+import { Activity, ShieldCheck, Zap, MoveHorizontal } from 'lucide-react'
 
 // Geometry for the pipeline: event → leader → parallel workers → synthesis → campaign.
 const MID_Y = 216
@@ -26,19 +26,19 @@ const curve = (x1, y1, x2, y2) => {
 
 export default function PipelineDiagram() {
   return (
-    <figure className="my-10 overflow-hidden rounded-2xl border border-cyan-500/20 bg-surface/80 p-4 sm:p-6 shadow-[0_0_35px_rgba(6,182,212,0.08)] backdrop-blur-xl">
+    <figure className="my-8 sm:my-10 overflow-hidden rounded-2xl border border-cyan-500/20 bg-surface/80 p-4 sm:p-6 shadow-[0_0_35px_rgba(6,182,212,0.08)] backdrop-blur-xl">
       {/* Console Top Header Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-white/10 pb-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500" />
           </span>
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
             LangGraph Swarm StateGraph
           </span>
-          <span className="text-slate-600">/</span>
-          <span className="font-mono text-[11px] text-slate-400">Deterministic Multi-Agent DAG</span>
+          <span className="hidden xs:inline text-slate-600">/</span>
+          <span className="hidden xs:inline font-mono text-[11px] text-slate-400">Deterministic Multi-Agent DAG</span>
         </div>
 
         <div className="flex items-center gap-3 font-mono text-[11px] text-slate-400">
@@ -46,18 +46,24 @@ export default function PipelineDiagram() {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             4 Workers Parallel
           </span>
-          <span className="hidden sm:inline text-slate-600">·</span>
-          <span className="hidden sm:inline text-slate-400">Risk-Gated</span>
+          <span className="text-slate-600">·</span>
+          <span className="text-slate-400">Risk-Gated</span>
         </div>
       </div>
 
+      {/* Touch swipe indicator for mobile/tablet */}
+      <div className="flex items-center gap-1.5 pt-3 font-mono text-[10px] text-cyan-400/80 md:hidden">
+        <MoveHorizontal size={13} className="animate-pulse" />
+        <span>Swipe horizontally to inspect agent nodes</span>
+      </div>
+
       {/* SVG Diagram Canvas */}
-      <div className="overflow-x-auto pt-4 pb-2">
+      <div className="overflow-x-auto touch-scroll pt-3 pb-2">
         <svg
           viewBox="0 0 980 470"
           role="img"
           aria-labelledby="pipeline-title"
-          className="h-auto w-full min-w-[760px]"
+          className="h-auto w-full min-w-[700px] sm:min-w-[760px]"
         >
           <title id="pipeline-title">
             Agent pipeline: a market event fans out from a leader agent to parallel research agents,
@@ -275,7 +281,7 @@ export default function PipelineDiagram() {
         </svg>
       </div>
 
-      <figcaption className="mt-3 flex items-center justify-between border-t border-white/5 pt-3 font-mono text-[11px] text-slate-500">
+      <figcaption className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-t border-white/5 pt-3 font-mono text-[11px] text-slate-500">
         <span>Figure 1: Production Multi-Agent Execution DAG</span>
         <span className="text-cyan-400/80">LangGraph · FastAPI · LiteLLM</span>
       </figcaption>
