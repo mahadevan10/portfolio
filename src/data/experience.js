@@ -6,12 +6,12 @@ export const winbold = {
   subtitle:
     'Multi-agent LLM system that turns market events into executable, risk-gated trading campaigns.',
   intro:
-    'Over eight months I built and now operate the core of an AI trading platform: a multi-agent system where a leader agent orchestrates a fleet of parallel research agents — each specializing in fundamentals, technicals, news, or event analysis — and synthesizes their findings into structured trading campaigns a downstream execution engine can run.',
+    'Over my time here I built and now operate the core of an AI trading platform: a multi-agent system where a leader agent orchestrates a fleet of parallel research agents — each specializing in fundamentals, technicals, news, or event analysis — and synthesizes their findings into structured trading campaigns a downstream execution engine can run.',
   lead: 'The interesting problems were never "call an LLM." They were everything around it:',
   problems: [
     {
       heading: 'Determinism where it matters',
-      body: 'LLMs propose; typed contracts dispose. Every generated strategy is forced through schema-validated capture nodes and a versioned JSON contract with the execution engine, pinned by contract tests — so a creative model can never emit an unexecutable trade plan.',
+      body: 'Leader agents propose; sub agents create versioned typed contracts. Every generated strategy is forced through schema-validated subagent nodes and a versioned JSON contract with the execution engine, pinned by contract tests — so a creative model can never emit an unexecutable trade plan, but it\'s creativity is never blocked using a pydantic schema.',
     },
     {
       heading: 'Reliability on an event loop',
@@ -19,11 +19,11 @@ export const winbold = {
     },
     {
       heading: 'LLM economics as an engineering discipline',
-      body: 'Per-tier model routing through a LiteLLM proxy, prompt-cache-aware session affinity, per-request cost attribution down to the individual strategy, and hard rules like "an unbounded retry may never wrap a billed call."',
+      body: 'Per-tier model routing through a LiteLLM proxy, prompt-cache-aware session affinity, per-request cost attribution down to the individual strategy.',
     },
     {
       heading: 'The whole stack',
-      body: 'FastAPI services, PostgreSQL, a React/TypeScript dashboard with live SSE streams and interactive strategy DAGs, deployed on Kubernetes behind outbound-only Cloudflare Zero Trust tunnels.',
+      body: 'FastAPI services, PostgreSQL, a React/TypeScript dashboard with live SSE streams and interactive strategy DAGs, deployed on k3 pods behind outbound-only Cloudflare Zero Trust tunnels.',
     },
   ],
   stack: [
@@ -33,16 +33,16 @@ export const winbold = {
     'PostgreSQL',
     'React',
     'TypeScript',
-    'Kubernetes (k3s)',
     'LiteLLM',
     'Opik',
-    'Cloudflare Zero Trust',
+    'Cloudflare Tunnels',
+    'Redis'
   ],
   stats: [
-    { value: '550+', label: 'commits' },
+    { value: '1050+', label: 'commits' },
     { value: '160+', label: 'pull requests' },
-    { value: '9', label: 'model strategy matrix' },
-    { value: '4', label: 'production services' },
+    { value: '2', label: 'Multi-agent systems' },
+    { value: '5', label: 'production services' },
   ],
 }
 
