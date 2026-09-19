@@ -60,11 +60,6 @@ export default function Experience() {
             <p className="font-mono text-xs uppercase tracking-widest text-accent">{winbold.company}</p>
             <h3 className="mt-2 font-display text-2xl font-semibold sm:text-3xl inline-block">
               {winbold.title}
-              <a href="https://siyadmohammed.github.io/codecraftventures/" className="ml-2 text-accent hover:text-accent-hover">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
-                </svg>
-              </a>
             </h3>
             <p className="mt-2 max-w-prose text-sm italic text-faint">{winbold.subtitle}</p>
             <p className="mt-1 font-mono text-xs text-faint lg:hidden">
@@ -98,7 +93,7 @@ export default function Experience() {
         <article className="mt-16 border-l-2 border-accent/30 pl-6">
           <h3 className="font-display text-xl font-semibold inline-block">
             {codecraft.company}
-            <a href="https://siyadmohammed.github.io/codecraftventures/" className="ml-2 text-accent hover:text-accent-hover">
+            <a href="https://siyadmohammed.github.io/codecraftventures/" className="ml-2 text-accent hover:text-accent-hover inline-block" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
               </svg>

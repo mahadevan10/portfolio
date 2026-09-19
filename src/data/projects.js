@@ -3,13 +3,13 @@ import { asset } from './profile'
 export const projects = [
   {
     id: 'proj-1',
-    image: asset('images/maddyBot.jpg'),
-    title: 'Personal Voice Bot',
+    image: asset('images/plusone.png'),
+    title: 'PlusOne',
     description:
-      'The bot answers like me, not a generic assistant, with responses kept ideally between 30-90 seconds. It also has barge-in capability.',
-    skills: ['Python', 'Flask', 'Docker', 'Google Cloud Platform', 'openAI', 'Git'],
-    website: 'https://voice-bot-web-28339467651.us-central1.run.app',
-    year: 2025,
+      'Designed, architected, and engineered from the ground up by Codecraft. PlusOne empowers members to discover local nightlife, spontaneous social events, and connect with verified companions in real time. Engineered with high-speed intent routing, instant messaging streams, and seamless mobile-first PWA responsiveness.',
+    skills: ['Next.js', 'Real-Time WebSockets', 'Docker', 'FastAPI', 'TypeScript', 'Git'],
+    website: 'https://www.plusone.today/',
+    year: 2026,
   },
   {
     id: 'proj-2',
@@ -68,4 +68,14 @@ export const projects = [
     github: 'https://github.com/mahadevan10/SIgn-language-recognition-LSTM-openCV',
     year: 2024,
   },
+  {
+    id: 'proj-8',
+    image: asset('images/maddyBot.jpg'),
+    title: 'Personal Voice Bot',
+    description:
+      'The bot answers like me, not a generic assistant, with responses kept ideally between 30-90 seconds. It also has barge-in capability.',
+    skills: ['Python', 'Flask', 'Docker', 'Google Cloud Platform', 'openAI', 'Git'],
+    website: 'https://voice-bot-web-28339467651.us-central1.run.app',
+    year: 2025,
+  },  
 ]
