@@ -1,6 +1,5 @@
-import PipelineDiagram from './PipelineDiagram'
-import SectionHeading from './SectionHeading'
-import { winbold, codecraft } from '../data/experience'
+import React from 'react';
+import { winbold, codecraft } from '../../data/experience';
 
 function FactsRail() {
   return (
