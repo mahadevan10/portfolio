@@ -1,22 +1,22 @@
 export const skillGroups = [
   {
-    title: 'Languages',
-    items: ['Python', 'JavaScript', 'TypeScript', 'SQL'],
+    title: 'Agentic AI & Orchestration',
+    items: ['LangGraph', 'LangChain', 'LiteLLM Proxy', 'RAG Systems', 'Multi-Agent Swarms', 'Pydantic Contracts'],
   },
   {
-    title: 'AI & Agents',
-    items: ['LangGraph', 'LangChain', 'LiteLLM', 'RAG', 'Hugging Face', 'FAISS', 'Sentence-Transformers'],
+    title: 'Quantitative & Data Science',
+    items: ['Python', 'Pandas', 'NumPy', 'LSTM Models', 'Scikit-learn', 'FAISS Vector DB', 'NLP / Transformers'],
   },
   {
-    title: 'Backend & Data',
-    items: ['FastAPI', 'PostgreSQL', 'Node.js', 'Express', 'MongoDB'],
+    title: 'Backend & Market Services',
+    items: ['FastAPI', 'PostgreSQL', 'Redis', 'SQL', 'WebSockets & SSE', 'Node.js'],
   },
   {
-    title: 'Frontend',
-    items: ['React', 'Next.js', 'Tailwind CSS'],
+    title: 'Infrastructure & Security',
+    items: ['Kubernetes (k3s)', 'Docker', 'Cloudflare Zero Trust', 'GitHub Actions CI/CD', 'GCP', 'Git'],
   },
   {
-    title: 'Infrastructure & Tools',
-    items: ['Kubernetes (k3s)', 'Docker', 'GitHub Actions', 'Cloudflare Zero Trust', 'GCP', 'Git', 'Claude Code'],
+    title: 'Dashboards & Interfaces',
+    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
   },
 ]

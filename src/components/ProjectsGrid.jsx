@@ -64,27 +64,27 @@ export default function ProjectsGrid({ projects = [] }) {
 
   const filterTabs = [
     { id: 'all', label: 'All Systems', count: counts.all },
-    { id: 'ai', label: 'AI & Machine Learning', count: counts.ai },
+    { id: 'ai', label: 'Quant & AI Models', count: counts.ai },
     { id: 'web', label: 'Full Stack & Web', count: counts.web },
   ]
 
   return (
-    <section id="projects" className="relative border-t border-white/10 bg-paper/95 py-16 sm:py-24">
+    <section id="projects" className="relative border-t border-white/[0.08] bg-paper/95 py-16 sm:py-24">
       {/* Ambient background glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-1/3 -z-10 h-[500px] w-[500px] rounded-full bg-violet-500/5 blur-[120px]"
+        className="pointer-events-none absolute left-0 top-1/3 -z-10 h-[500px] w-[500px] rounded-full bg-gold/5 blur-[160px]"
       />
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Section Header with Category Filter */}
         <div className="flex flex-col gap-5 sm:gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionHeading id="projects-heading" tag="MISSION_LOG_02">
-              Featured Projects
+            <SectionHeading id="projects-heading" tag="PRODUCTION PORTFOLIO">
+              Selected Systems & Deployments
             </SectionHeading>
             <p className="mt-2 text-sm text-slate-400">
-              Things I built to learn, and a few that stuck.
+              Quantitative models, high-concurrency web platforms, and agentic workflows.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export default function ProjectsGrid({ projects = [] }) {
           <div
             role="tablist"
             aria-label="Filter projects by category"
-            className="flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-scroll rounded-2xl border border-white/10 bg-surface/80 p-1.5 backdrop-blur-xl shadow-lg sm:flex-wrap"
+            className="flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-scroll rounded-2xl border border-white/[0.08] bg-surface/80 p-1.5 backdrop-blur-xl card-institutional sm:flex-wrap"
           >
             {filterTabs.map((tab) => {
               const isActive = activeFilter === tab.id
@@ -104,14 +104,14 @@ export default function ProjectsGrid({ projects = [] }) {
                   onClick={() => setActiveFilter(tab.id)}
                   className={`flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 font-mono text-xs transition-all duration-200 ${
                     isActive
-                      ? 'bg-cyan-500 text-black font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)]'
+                      ? 'bg-gold text-slate-950 font-semibold shadow-sm'
                       : 'text-slate-400 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   <span>{tab.label}</span>
                   <span
                     className={`rounded-full px-1.5 py-0.5 text-[10px] leading-none ${
-                      isActive ? 'bg-black/20 text-black font-bold' : 'bg-white/10 text-slate-400'
+                      isActive ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-white/10 text-slate-400'
                     }`}
                   >
                     {tab.count}
@@ -125,10 +125,10 @@ export default function ProjectsGrid({ projects = [] }) {
         {/* Featured Flagship Project (Shown in "All" view) */}
         {featuredProject && (
           <div className="mt-10 sm:mt-12">
-            <article className="group relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-surface/70 shadow-[0_0_40px_rgba(6,182,212,0.06)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_50px_rgba(6,182,212,0.15)]">
+            <article className="group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-surface/75 card-institutional backdrop-blur-xl transition-all duration-300 hover:border-gold/40">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Media Preview (5 cols) */}
-                <div className="relative border-b border-white/10 bg-slate-900/50 lg:col-span-5 lg:border-b-0 lg:border-r overflow-hidden min-h-[280px] sm:min-h-[320px]">
+                <div className="relative border-b border-white/[0.08] bg-slate-900/50 lg:col-span-5 lg:border-b-0 lg:border-r overflow-hidden min-h-[280px] sm:min-h-[320px]">
                   {featuredProject.image && (
                     <img
                       src={featuredProject.image}
@@ -143,14 +143,14 @@ export default function ProjectsGrid({ projects = [] }) {
 
                   {/* Badges on image */}
                   <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/40 bg-surface/90 px-3 py-1 font-mono text-[11px] font-medium text-cyan-300 backdrop-blur-md shadow-lg">
-                      <Sparkles size={12} className="text-cyan-400" />
-                      Featured Flagship
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-surface/90 px-3 py-1 font-mono text-[11px] font-medium text-slate-200 backdrop-blur-md shadow-lg">
+                      <Sparkles size={12} className="text-gold" />
+                      Featured Production
                     </span>
                     {featuredProject.website && (
                       <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-surface/90 px-2.5 py-1 font-mono text-[11px] font-medium text-emerald-400 backdrop-blur-md shadow-lg">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
-                        Live Production
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        Live Platform
                       </span>
                     )}
                   </div>
@@ -160,12 +160,12 @@ export default function ProjectsGrid({ projects = [] }) {
                 <div className="flex flex-col justify-between p-6 sm:p-8 lg:col-span-7">
                   <div>
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono text-xs font-semibold uppercase tracking-widest text-cyan-400">
+                      <span className="font-mono text-xs font-semibold uppercase tracking-widest text-gold">
                         PRODUCTION PWA · {featuredProject.year}
                       </span>
                     </div>
 
-                    <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-white transition-colors sm:text-3xl group-hover:text-cyan-300">
+                    <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-gold-light">
                       {featuredProject.title}
                     </h3>
 
@@ -178,7 +178,7 @@ export default function ProjectsGrid({ projects = [] }) {
                       {featuredProject.skills?.map((s) => (
                         <span
                           key={s}
-                          className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-slate-200 transition-colors group-hover:border-cyan-500/30"
+                          className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-slate-200 transition-colors group-hover:border-gold/30"
                         >
                           {s}
                         </span>
@@ -187,15 +187,15 @@ export default function ProjectsGrid({ projects = [] }) {
                   </div>
 
                   {/* Actions */}
-                  <div className="mt-8 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3 border-t border-white/10 pt-5">
+                  <div className="mt-8 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3 border-t border-white/[0.08] pt-5">
                     {featuredProject.website && (
                       <a
                         href={featuredProject.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-5 py-2.5 font-mono text-xs font-semibold text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)]"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-2.5 font-mono text-xs font-semibold text-slate-950 shadow-sm transition-all hover:bg-gold-light hover:shadow-md"
                       >
-                        <span>Launch Application</span>
+                        <span>Launch Platform</span>
                         <ArrowUpRight size={15} />
                       </a>
                     )}
@@ -204,7 +204,7 @@ export default function ProjectsGrid({ projects = [] }) {
                         href={featuredProject.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-surface px-5 py-2.5 font-mono text-xs font-medium text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-white"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-surface px-5 py-2.5 font-mono text-xs font-medium text-slate-300 transition-colors hover:border-gold/40 hover:text-white"
                       >
                         <Github size={15} />
                         <span>Inspect Source</span>
@@ -222,10 +222,10 @@ export default function ProjectsGrid({ projects = [] }) {
           {regularProjects.map((p) => (
             <article
               key={p.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_12px_35px_-10px_rgba(6,182,212,0.2)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface/70 backdrop-blur-xl card-institutional-hover"
             >
               {/* Media Thumbnail */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-white/10 bg-slate-900/60">
+              <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-white/[0.08] bg-slate-900/60">
                 {p.image && (
                   <img
                     src={p.image}
@@ -241,14 +241,14 @@ export default function ProjectsGrid({ projects = [] }) {
                 {/* Status Badges */}
                 <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
                   {p.underWork ? (
-                    <span className="flex items-center gap-1.5 rounded-full border border-rose-500/40 bg-surface/90 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-rose-400 backdrop-blur-md shadow-xs">
-                      <span className="h-1.5 w-1.5 rounded-full bg-rose-400 animate-ping" aria-hidden="true" />
-                      Under work
+                    <span className="flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-surface/90 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-amber-400 backdrop-blur-md shadow-xs">
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+                      In Progress
                     </span>
                   ) : p.website ? (
                     <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-surface/90 px-2.5 py-0.5 font-mono text-[10px] tracking-wider text-emerald-400 backdrop-blur-md shadow-xs">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      Live
+                      Live Platform
                     </span>
                   ) : null}
                 </div>
@@ -262,10 +262,10 @@ export default function ProjectsGrid({ projects = [] }) {
               {/* Content Card Body */}
               <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
                 <div>
-                  <h3 className="font-display text-lg font-bold text-white transition-colors sm:text-xl group-hover:text-cyan-300">
+                  <h3 className="font-serif text-xl font-bold text-white transition-colors group-hover:text-gold-light">
                     {p.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-slate-400">
+                  <p className="mt-2.5 text-sm leading-relaxed text-slate-300">
                     {p.description}
                   </p>
                 </div>
@@ -276,7 +276,7 @@ export default function ProjectsGrid({ projects = [] }) {
                     {p.skills?.map((s) => (
                       <span
                         key={s}
-                        className="rounded border border-white/10 bg-paper/80 px-2 py-0.5 font-mono text-[10px] text-slate-300 transition-colors group-hover:border-cyan-500/30 group-hover:text-cyan-200"
+                        className="rounded-md border border-white/10 bg-paper/80 px-2 py-0.5 font-mono text-[10px] text-slate-300 transition-colors group-hover:border-gold/30 group-hover:text-gold-light"
                       >
                         {s}
                       </span>
@@ -284,18 +284,18 @@ export default function ProjectsGrid({ projects = [] }) {
                   </div>
 
                   {/* Actions Footer */}
-                  <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-4 font-mono text-xs">
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-white/[0.08] pt-4 font-mono text-xs">
                     <div className="flex flex-wrap items-center gap-3 sm:gap-3.5">
                       {p.website && (
                         <a
                           href={p.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group/link inline-flex items-center gap-1 text-cyan-400 transition-colors hover:text-cyan-300"
+                          className="group/link inline-flex items-center gap-1 text-gold transition-colors hover:text-gold-light"
                         >
                           <Globe size={13} />
-                          <span className="underline decoration-cyan-500/40 underline-offset-4 group-hover/link:decoration-cyan-400">
-                            Live Demo
+                          <span className="underline decoration-gold/40 underline-offset-4 group-hover/link:decoration-gold">
+                            Live Platform
                           </span>
                           <ArrowUpRight
                             size={12}
@@ -322,7 +322,7 @@ export default function ProjectsGrid({ projects = [] }) {
                       )}
                     </div>
 
-                    <span className="font-mono text-[10px] text-slate-600">
+                    <span className="font-mono text-[10px] text-slate-500">
                       0{p.id.replace('proj-', '')}
                     </span>
                   </div>

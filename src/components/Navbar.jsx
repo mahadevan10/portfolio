@@ -48,24 +48,26 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-4 py-2.5 sm:px-6">
           {/* Identity & Status Beacon */}
-          <a href="#top" className="flex items-center gap-3 group" onClick={close}>
-            <div className="relative">
+          <a href="#top" className="flex items-center gap-2.5 sm:gap-3 group" onClick={close}>
+            <div className="relative shrink-0">
               <img
                 src={profile.photo}
                 alt=""
                 width="36"
                 height="36"
-                className="h-9 w-9 rounded-full object-cover ring-1 ring-cyan-500/40 transition-transform group-hover:scale-105"
+                className="h-9 w-9 rounded-full object-cover ring-1 ring-gold/40 transition-transform group-hover:scale-105"
               />
-              <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3 items-center justify-center">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5 items-center justify-center">
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
               </span>
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-display text-sm font-bold tracking-tight text-white group-hover:text-accent transition-colors sm:text-base">
+                <span className="font-serif text-base font-bold tracking-tight text-white group-hover:text-gold transition-colors sm:text-lg">
                   {profile.shortName}
+                </span>
+                <span className="rounded border border-gold/30 bg-gold/10 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-gold-light whitespace-nowrap">
+                  Capital Markets AI
                 </span>
               </div>
             </div>
@@ -78,7 +80,7 @@ export default function Navbar() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="text-faint transition-all hover:text-cyan-300 hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]"
+                    className="text-slate-300 transition-all hover:text-gold"
                   >
                     {l.label}
                   </a>
@@ -92,7 +94,7 @@ export default function Navbar() {
             <a
               href={profile.resume}
               download
-              className="flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-950/30 px-4 py-1.5 font-mono text-xs font-medium text-cyan-300 shadow-[0_0_15px_-3px_rgba(6,182,212,0.25)] transition-all hover:border-cyan-400 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]"
+              className="flex items-center gap-2 rounded-xl border border-gold/40 bg-gold/10 px-4 py-1.5 font-mono text-xs font-semibold text-gold-light shadow-sm transition-all hover:border-gold hover:bg-gold hover:text-slate-950"
             >
               <FileDown size={13} />
               <span>Resume</span>
@@ -105,7 +107,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle navigation menu"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-faint hover:bg-white/5 hover:text-white md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-slate-300 hover:bg-white/5 hover:text-white md:hidden"
           >
             {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -120,7 +122,7 @@ export default function Navbar() {
                   <a
                     href={l.href}
                     onClick={close}
-                    className="block py-1 text-faint transition-colors hover:text-cyan-300 active:text-cyan-300"
+                    className="block py-1 text-slate-300 transition-colors hover:text-gold active:text-gold"
                   >
                     {l.label}
                   </a>
@@ -131,7 +133,7 @@ export default function Navbar() {
                   href={profile.resume}
                   download
                   onClick={close}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-950/40 py-2.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:bg-cyan-500 hover:text-black"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-gold/40 bg-gold/15 py-2.5 font-mono text-xs font-semibold text-gold-light transition-colors hover:bg-gold hover:text-slate-950"
                 >
                   <FileDown size={14} />
                   <span>Download Resume</span>
